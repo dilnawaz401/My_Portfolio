@@ -1,69 +1,174 @@
-import React from 'react';
-import { Github, ExternalLink, Thermometer, Building2 } from 'lucide-react';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import Tilt from './Tilt';
+import { ArrowUpRight, BrainCircuit, Bot, Building2, Cloud, FileText, Github, Layers3, Sparkles, X } from 'lucide-react';
+
+const projectData = [
+  {
+    title: 'Generative AI Chatbot',
+    status: 'In Progress',
+    category: 'AI Application',
+    description:
+      'A conversational AI assistant that answers user questions and maintains conversation context using a modern LLM workflow.',
+    tech: ['Python', 'Streamlit', 'LLM API'],
+    github: '#',
+    demo: '#',
+    visual: Bot,
+    details:
+      'Planned conversational agent with memory, prompt orchestration, and a simple streaming interface for interactive Q&A.',
+  },
+  {
+    title: 'RAG Document Intelligence',
+    status: 'Planned',
+    category: 'AI System',
+    description:
+      'An application that answers questions from uploaded PDF documents using semantic retrieval and grounded responses.',
+    tech: ['Python', 'Embeddings', 'FAISS / Chroma', 'Streamlit'],
+    github: '#',
+    demo: '#',
+    visual: FileText,
+    details:
+      'A document pipeline using chunking, embedding search, and answer synthesis with source-grounded results for knowledge retrieval.',
+  },
+  {
+    title: 'MCP Tool Integration Server',
+    status: 'Planned',
+    category: 'Tooling',
+    description:
+      'An MCP server exposing validated tools that a compatible AI client can discover and invoke.',
+    tech: ['Python', 'MCP SDK', 'APIs'],
+    github: '#',
+    demo: '#',
+    visual: BrainCircuit,
+    details:
+      'A secure tool registry and execution layer for connecting AI clients to external APIs and validated workflows.',
+  },
+  {
+    title: 'Multi-Agent Research System',
+    status: 'In Progress',
+    category: 'AI Workflow',
+    description:
+      'A coordinated workflow with planning, research, analysis, and review agents for higher-quality outputs.',
+    tech: ['Python', 'LangGraph', 'LLM APIs'],
+    github: '#',
+    demo: '#',
+    visual: Layers3,
+    details:
+      'A multi-step prompt system coordinating specialized agents for planning, retrieval, synthesis, and review.',
+  },
+  {
+    title: 'AI Resume Matcher',
+    status: 'Planned',
+    category: 'Analytics',
+    description:
+      'An AI web application that extracts skills, compares a resume with a job description, and identifies potential skill gaps.',
+    tech: ['Python', 'NLP', 'Streamlit', 'scikit-learn'],
+    github: '#',
+    demo: '#',
+    visual: Sparkles,
+    details:
+      'A resume analysis tool using semantic similarity and skill extraction to compare candidate profiles with role requirements.',
+  },
+  {
+    title: 'Cloud AI Deployment',
+    status: 'Planned',
+    category: 'Deployment',
+    description:
+      'A containerized AI application deployed using Docker and AWS EC2, with deployment instructions and security controls.',
+    tech: ['Docker', 'AWS EC2', 'GitHub', 'Linux'],
+    github: '#',
+    demo: '#',
+    visual: Cloud,
+    details:
+      'Production-oriented deployment setup focused on containerization, infrastructure configuration, and basic security hygiene.',
+  },
+];
 
 const Projects = () => {
-  const projects = [
-    {
-      title: "Temperature Prediction ML Model",
-      description: "An intelligent machine learning model that predicts location-based temperature using historical weather data, feature engineering, and advanced regression algorithms.",
-      github: "https://github.com/dilnawaz401",
-      link: "#",
-      tags: ["Python", "Machine Learning", "Feature Engineering", "Scikit-learn", "Data Science"],
-      icon: <Thermometer size={80} />
-    },
-    {
-      title: "University Full Stack Website",
-      description: "A comprehensive university management system with student portal, faculty dashboard, course registration, and admin panel built with modern web technologies.",
-      github: "https://github.com/dilnawaz401",
-      link: "#",
-      tags: ["React", "Node.js", "MongoDB", "Express", "Full Stack"],
-      icon: <Building2 size={80} />
-    },
-    {
-      title: "AI-Powered Chatbot",
-      description: "An intelligent chatbot using NLP and deep learning for natural language understanding and automated responses.",
-      github: "https://github.com/dilnawaz401",
-      link: "#",
-      tags: ["NLP", "Deep Learning", "TensorFlow", "Python"],
-      icon: <span className="text-6xl">🤖</span>
-    },
-    {
-      title: "Power BI Data Dashboard",
-      description: "Interactive business intelligence dashboard with real-time data visualization, KPI tracking, and advanced analytics.",
-      github: "https://github.com/dilnawaz401",
-      link: "#",
-      tags: ["Power BI", "Data Visualization", "Analytics", "SQL"],
-      icon: <span className="text-6xl">📊</span>
-    }
-  ];
+  const [selectedProject, setSelectedProject] = useState(null);
 
   return (
     <section id="projects" className="projects">
-      <div className="container">
-        <h2 className="section-title">Featured Projects</h2>
+      <div className="container section-shell">
+        <div className="section-heading">
+          <span className="eyebrow">Projects</span>
+          <h2 className="section-title">Featured portfolio concepts</h2>
+        </div>
+
         <div className="projects-grid">
-          {projects.map((project, index) => (
-            <div key={index} className="project-card">
-              <div className="project-placeholder">
-                {project.icon}
-              </div>
-              <div className="project-info">
-                <div className="project-tags">
-                  {project.tags.map((tag, i) => (
-                    <span key={i} className="project-badge">{tag}</span>
-                  ))}
-                </div>
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-desc">{project.description}</p>
-                <div className="project-links">
-                  <a href={project.github} className="project-link"><Github size={22} /> Source Code</a>
-                  {project.link && <a href={project.link} className="project-link"><ExternalLink size={22} /> Live Demo</a>}
-                </div>
-              </div>
-            </div>
-          ))}
+          {projectData.map((project, index) => {
+            const Icon = project.visual;
+            return (
+              <Tilt key={project.title} max={7} className="project-tilt">
+                <motion.article
+                  className="project-card"
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.18 }}
+                  transition={{ duration: 0.45, delay: index * 0.08 }}
+                >
+                  <div className="project-visual">
+                    <div className="project-visual-orb">
+                      <Icon size={62} />
+                    </div>
+                    <span className="project-status">{project.status}</span>
+                  </div>
+
+                  <div className="project-body">
+                    <div className="project-tags">
+                      {project.tech.map((tag) => (
+                        <span key={tag} className="project-tag">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    <h3>{project.title}</h3>
+                    <p>{project.description}</p>
+
+                    <div className="project-actions">
+                      <a href={project.github} className="project-link">
+                        <Github size={16} />
+                        GitHub Repo
+                      </a>
+                      <a href={project.demo} className="project-link">
+                        <ArrowUpRight size={16} />
+                        Live Demo
+                      </a>
+                      <button type="button" className="project-link button-link" onClick={() => setSelectedProject(project)}>
+                        Details
+                      </button>
+                    </div>
+                  </div>
+                </motion.article>
+              </Tilt>
+            );
+          })}
         </div>
       </div>
+
+      {selectedProject && (
+        <div className="project-modal-backdrop" onClick={() => setSelectedProject(null)}>
+          <div className="project-modal" onClick={(event) => event.stopPropagation()}>
+            <button className="modal-close" type="button" onClick={() => setSelectedProject(null)} aria-label="Close project details">
+              <X size={18} />
+            </button>
+            <div className="modal-visual">
+              <selectedProject.visual size={54} />
+            </div>
+            <span className="project-status modal-status">{selectedProject.status}</span>
+            <h3>{selectedProject.title}</h3>
+            <p>{selectedProject.details}</p>
+            <div className="project-tags modal-tags">
+              {selectedProject.tech.map((tag) => (
+                <span key={tag} className="project-tag">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
