@@ -1,7 +1,56 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Tilt from './Tilt';
-import { ArrowUpRight, BrainCircuit, Bot, Building2, Cloud, FileText, Github, Layers3, Sparkles, X } from 'lucide-react';
+import { BarChart3, Bot, BrainCircuit, CloudSun, ExternalLink, FileText, Github, Layers3, X } from 'lucide-react';
+
+const githubRepositoriesUrl = 'https://github.com/dilnawaz401?tab=repositories';
+
+const projectCollections = [
+  {
+    title: 'Data Analytics',
+    visual: BarChart3,
+    github: githubRepositoriesUrl,
+    projects: [
+      'YouTube Data Analytics',
+      'Stock Market Data Analytics',
+      'Zomato Data Analytics',
+      'Retail Sales Data Analytics',
+      'ChatGPT Data Analytics',
+    ],
+  },
+  {
+    title: 'Data Science & Machine Learning',
+    visual: BrainCircuit,
+    github: githubRepositoriesUrl,
+    projects: [
+      'Customer Revenue Prediction App (With Deployment)',
+      'Gender From Voice Prediction App',
+      'Restaurant Recommendation System',
+      'Happiness Ranking App',
+      'Forest Fire Prediction App',
+      'Black Friday Sale Prediction',
+      'Sentiment Analysis Using Natural Language Processing',
+      'Parkinson Syndrome Prediction',
+      'Fake News Classifier Using NLP',
+      'Toxic Comment Classifier Using NLP',
+      'Movie Ratings Prediction (IMDB) Using NLP',
+      'Air Quality Prediction',
+      'Covid-19 Case Analysis',
+      'Customer Churning Prediction',
+      'Building A Chatbot Application (NLP)',
+      'Video Game Sales Prediction Using Machine Learning',
+      'Car Selling Price Prediction',
+      'Affair Prediction App',
+      'Mushroom Classification App',
+      'Mobile App Rating Prediction',
+      'Heart Attack Risk Prediction With Auto ML',
+      'Credit Card Fraud Detection Using PyCaret',
+      'Flight Fare Detection Using Auto SK Learn',
+      'Petrol Price Forecasting Using Auto Keras',
+      'Bank Customer Churn Prediction Using H2O Auto ML',
+    ],
+  },
+];
 
 const projectData = [
   {
@@ -11,11 +60,24 @@ const projectData = [
     description:
       'A conversational AI assistant that answers user questions and maintains conversation context using a modern LLM workflow.',
     tech: ['Python', 'Streamlit', 'LLM API'],
-    github: '#',
-    demo: '#',
+    github: githubRepositoriesUrl,
+    demo: 'https://gen-ai-chatbot-401.streamlit.app/',
     visual: Bot,
     details:
       'Planned conversational agent with memory, prompt orchestration, and a simple streaming interface for interactive Q&A.',
+  },
+  {
+    title: 'Weather Prediction',
+    status: 'Completed',
+    category: 'Machine Learning',
+    description:
+      'A machine learning project that predicts weather conditions from historical data using data preprocessing, feature engineering, and predictive modeling.',
+    tech: ['Python', 'Machine Learning', 'Pandas', 'scikit-learn'],
+    github: githubRepositoriesUrl,
+    demo: 'https://weather-prediction-401.netlify.app/',
+    visual: CloudSun,
+    details:
+      'Built and evaluated predictive models on historical weather data, covering data cleaning, exploratory analysis, and model comparison for accurate forecasting.',
   },
   {
     title: 'RAG Document Intelligence',
@@ -24,24 +86,10 @@ const projectData = [
     description:
       'An application that answers questions from uploaded PDF documents using semantic retrieval and grounded responses.',
     tech: ['Python', 'Embeddings', 'FAISS / Chroma', 'Streamlit'],
-    github: '#',
-    demo: '#',
+    github: githubRepositoriesUrl,
     visual: FileText,
     details:
       'A document pipeline using chunking, embedding search, and answer synthesis with source-grounded results for knowledge retrieval.',
-  },
-  {
-    title: 'MCP Tool Integration Server',
-    status: 'Planned',
-    category: 'Tooling',
-    description:
-      'An MCP server exposing validated tools that a compatible AI client can discover and invoke.',
-    tech: ['Python', 'MCP SDK', 'APIs'],
-    github: '#',
-    demo: '#',
-    visual: BrainCircuit,
-    details:
-      'A secure tool registry and execution layer for connecting AI clients to external APIs and validated workflows.',
   },
   {
     title: 'Multi-Agent Research System',
@@ -50,37 +98,10 @@ const projectData = [
     description:
       'A coordinated workflow with planning, research, analysis, and review agents for higher-quality outputs.',
     tech: ['Python', 'LangGraph', 'LLM APIs'],
-    github: '#',
-    demo: '#',
+    github: githubRepositoriesUrl,
     visual: Layers3,
     details:
       'A multi-step prompt system coordinating specialized agents for planning, retrieval, synthesis, and review.',
-  },
-  {
-    title: 'AI Resume Matcher',
-    status: 'Planned',
-    category: 'Analytics',
-    description:
-      'An AI web application that extracts skills, compares a resume with a job description, and identifies potential skill gaps.',
-    tech: ['Python', 'NLP', 'Streamlit', 'scikit-learn'],
-    github: '#',
-    demo: '#',
-    visual: Sparkles,
-    details:
-      'A resume analysis tool using semantic similarity and skill extraction to compare candidate profiles with role requirements.',
-  },
-  {
-    title: 'Cloud AI Deployment',
-    status: 'Planned',
-    category: 'Deployment',
-    description:
-      'A containerized AI application deployed using Docker and AWS EC2, with deployment instructions and security controls.',
-    tech: ['Docker', 'AWS EC2', 'GitHub', 'Linux'],
-    github: '#',
-    demo: '#',
-    visual: Cloud,
-    details:
-      'Production-oriented deployment setup focused on containerization, infrastructure configuration, and basic security hygiene.',
   },
 ];
 
@@ -92,10 +113,61 @@ const Projects = () => {
       <div className="container section-shell">
         <div className="section-heading">
           <span className="eyebrow">Projects</span>
-          <h2 className="section-title">Featured portfolio concepts</h2>
+          <h2 className="section-title">Data, AI &amp; machine learning</h2>
+          <a
+            href={githubRepositoriesUrl}
+            className="project-link"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Github size={16} />
+            Browse all GitHub repositories
+          </a>
         </div>
 
         <div className="projects-grid">
+          {projectCollections.map((collection, index) => {
+            const Icon = collection.visual;
+            return (
+              <motion.article
+                key={collection.title}
+                className="project-card project-collection"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.18 }}
+                transition={{ duration: 0.45, delay: index * 0.08 }}
+              >
+                <div className="project-visual">
+                  <div className="project-visual-orb">
+                    <Icon size={62} />
+                  </div>
+                  <span className="project-status">{collection.projects.length} projects</span>
+                </div>
+                <div className="project-body">
+                  <h3>{collection.title}</h3>
+                  <ul className="project-collection-list">
+                    {collection.projects.map((title) => (
+                      <li key={title}>
+                        <a href={githubRepositoriesUrl} target="_blank" rel="noreferrer">
+                          {title}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                  <a
+                    href={collection.github}
+                    className="project-link"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <Github size={16} />
+                    View {collection.title} repository
+                  </a>
+                </div>
+              </motion.article>
+            );
+          })}
+
           {projectData.map((project, index) => {
             const Icon = project.visual;
             return (
@@ -127,14 +199,28 @@ const Projects = () => {
                     <p>{project.description}</p>
 
                     <div className="project-actions">
-                      <a href={project.github} className="project-link">
-                        <Github size={16} />
-                        GitHub Repo
-                      </a>
-                      <a href={project.demo} className="project-link">
-                        <ArrowUpRight size={16} />
-                        Live Demo
-                      </a>
+                      {project.github !== '#' && (
+                        <a
+                          href={project.github}
+                          className="project-link"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <Github size={16} />
+                          GitHub Repo
+                        </a>
+                      )}
+                      {project.demo && (
+                        <a
+                          href={project.demo}
+                          className="project-link"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <ExternalLink size={16} />
+                          Live Demo
+                        </a>
+                      )}
                       <button type="button" className="project-link button-link" onClick={() => setSelectedProject(project)}>
                         Details
                       </button>

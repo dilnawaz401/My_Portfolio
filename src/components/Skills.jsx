@@ -25,6 +25,7 @@ const skillGroups = [
       { name: 'JavaScript', icon: Code2 },
       { name: 'HTML', icon: LayoutTemplate },
       { name: 'CSS', icon: LayoutTemplate },
+      { name: 'React.js', icon: Code2 },
     ],
   },
   {
@@ -58,6 +59,8 @@ const skillGroups = [
       { name: 'Multi-Agent Systems', icon: Brain },
       { name: 'Docker', icon: Cloud },
       { name: 'AWS', icon: Cloud },
+      { name: 'AWS EC2 Deployment', icon: Cloud },
+      { name: 'AI-Assisted Frontend Development', icon: Sparkles },
     ],
   },
 ];

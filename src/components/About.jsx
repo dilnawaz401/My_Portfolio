@@ -8,7 +8,7 @@ const About = () => {
       <div className="container section-shell">
         <div className="section-heading">
           <span className="eyebrow">About</span>
-          <h2 className="section-title">Engineering thoughtful AI experiences</h2>
+          <h2 className="section-title">Data science, analytics &amp; AI-powered experiences</h2>
         </div>
 
         <div className="about-grid">
@@ -34,14 +34,14 @@ const About = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <h3>Dilnawaz Ansari</h3>
-            <p className="about-highlight">Third-year CSE (AI & ML) student</p>
+            <p className="about-highlight">Aspiring Data Scientist | Generative AI | Data Analytics</p>
             <p>
-              I am a Computer Science & Engineering student specializing in Artificial Intelligence and Machine Learning,
-              focused on building elegant, useful systems that combine software engineering with AI-driven intelligence.
+              I am a Computer Science &amp; Engineering student specializing in Artificial Intelligence and Machine Learning,
+              building skills in data science, data analytics, and AI-powered frontend development.
             </p>
             <p>
-              My interests include machine learning, natural language processing, generative AI, intelligent agents, and
-              modern software engineering. I enjoy translating complex ideas into practical applications that solve real-world problems.
+              My interests include machine learning, natural language processing, generative AI, and modern web development.
+              I enjoy turning data and ideas into practical applications.
             </p>
             <div className="about-meta-grid">
               <div className="meta-block">
@@ -55,9 +55,10 @@ const About = () => {
             </div>
             <div className="about-tags">
               <span>Machine Learning</span>
+              <span>Data Analytics</span>
               <span>NLP</span>
               <span>Generative AI</span>
-              <span>Intelligent Systems</span>
+              <span>AI-Powered Frontend</span>
             </div>
           </motion.div>
         </div>

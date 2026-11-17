@@ -681,6 +681,35 @@ section {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
+.project-collection {
+  grid-column: 1 / -1;
+}
+
+.project-collection-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.65rem;
+}
+
+.project-collection-list li {
+  padding: 0.75rem 0.9rem;
+  border: 1px solid rgba(125, 211, 252, 0.12);
+  border-radius: 12px;
+  background: rgba(2, 6, 23, 0.36);
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+.project-collection-list a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-collection-list a:hover {
+  color: var(--primary);
+}
+
 .project-visual {
   position: relative;
   display: flex;

@@ -6,23 +6,26 @@ const platforms = [
   {
     name: 'GeeksforGeeks',
     label: 'GFG',
-    description: 'Practice DSA, interview patterns, and problem-solving fundamentals across arrays, graphs, trees, and optimization.',
+    description: '300+ questions solved across data structures, algorithms, and problem-solving fundamentals.',
     href: 'https://www.geeksforgeeks.org/profile/dilnawazahdic',
     accent: 'gfg',
+    action: 'Practice',
   },
   {
     name: 'LeetCode',
     label: 'LC',
-    description: 'Solve daily coding challenges, strengthen algorithmic thinking, and prepare for technical interviews.',
-    href: 'https://leetcode.com/',
+    description: 'Keep up with my ongoing LeetCode practice and interview problem-solving journey.',
+    href: 'https://leetcode.com/u/D_A_00777/',
     accent: 'leetcode',
+    action: 'Practice',
   },
   {
     name: 'GitHub',
     label: 'GH',
     description: 'Host projects, version control, and collaborate on code with repositories, commits, and open-source contributions.',
-    href: 'https://github.com/dilnawaz401git',
+    href: 'https://github.com/dilnawaz401?tab=repositories',
     accent: 'github',
+    action: 'Repositories',
   },
 ];
 
@@ -54,7 +57,7 @@ const ProblemSolving = () => {
                   </div>
                   <span className="problem-tag">
                     <Cpu size={14} />
-                    Practice
+                    {platform.action}
                   </span>
                 </div>
 

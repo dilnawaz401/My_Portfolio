@@ -5,7 +5,7 @@ const Footer = () => {
     <footer>
       <div className="container footer-inner">
         <div className="footer-socials">
-          <a href="https://github.com/dilnawaz401git" target="_blank" rel="noreferrer" aria-label="GitHub profile">
+          <a href="https://github.com/dilnawaz401?tab=repositories" target="_blank" rel="noreferrer" aria-label="GitHub profile">
             <Github size={22} />
           </a>
           <a href="https://www.linkedin.com/in/dilnawaz-ansari-931215358/" target="_blank" rel="noreferrer" aria-label="LinkedIn profile">

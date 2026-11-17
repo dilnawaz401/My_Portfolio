@@ -136,15 +136,15 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: 'easeOut' }}
         >
-          <span className="eyebrow">Aspiring AI/ML Engineer</span>
+          <span className="eyebrow">Aspiring Data Scientist</span>
           <h1>
             Building Intelligence.
             <span>Engineering the Future.</span>
           </h1>
           <h2>Dilnawaz Ansari</h2>
-          <p className="hero-subtitle">Aspiring AI/ML Engineer | Generative AI | Intelligent Systems</p>
+          <p className="hero-subtitle">Data Science | Generative AI | Data Analytics</p>
           <p className="hero-description">
-            I build intelligent applications using machine learning, natural language processing, and modern AI technologies.
+            I explore data and build AI-powered applications, combining analytics, machine learning, and modern frontend development.
           </p>
 
           <div className="hero-actions">
