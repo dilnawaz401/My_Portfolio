@@ -40,6 +40,42 @@ const BeyondTechnology = () => {
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.45, delay: 0.15 }}
+          >
+            <div className="sports-icon">
+              <Trophy size={24} />
+            </div>
+            <span className="experience-label">Judo</span>
+            <h3>National-Level Judo Player</h3>
+            <p>
+              Represented competitive Judo at the national level, developing resilience,
+              agility, discipline, and strategic control under pressure.
+            </p>
+          </motion.article>
+
+          <motion.article
+            className="sports-card"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.45, delay: 0.2 }}
+          >
+            <div className="sports-icon">
+              <Trophy size={24} />
+            </div>
+            <span className="experience-label">Athletics</span>
+            <h3>State-Level Athlete</h3>
+            <p>
+              Competed at the state level in athletics, building speed, endurance,
+              consistency, and a strong competitive mindset.
+            </p>
+          </motion.article>
+
+          <motion.article
+            className="sports-card"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.45, delay: 0.1 }}
           >
             <div className="sports-icon">

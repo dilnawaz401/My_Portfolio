@@ -5,6 +5,7 @@ import Skills from './components/Skills';
 import ProblemSolving from './components/ProblemSolving';
 import Projects from './components/Projects';
 import Experience from './components/Experience';
+import Certificates from './components/Certificates';
 import BeyondTechnology from './components/BeyondTechnology';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -21,6 +22,7 @@ function App() {
         <ProblemSolving />
         <Projects />
         <Experience />
+        <Certificates />
         <BeyondTechnology />
         <Contact />
       </main>
